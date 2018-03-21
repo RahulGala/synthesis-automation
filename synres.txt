@@ -1,0 +1,312 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+              Version K-2015.06-SP5-1 for linux64 - Feb 26, 2016 
+                                        
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+read_verilog fby2.v
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading verilog file '/home/010736297@SJSUAD.SJSU.EDU/Desktop/design_projects/f_by_2/fby2.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/010736297@SJSUAD.SJSU.EDU/Desktop/design_projects/f_by_2/fby2.v
+$display output: D-F/F output?
+$display output: D-F/F output?
+
+Inferred memory devices in process
+	in routine fby2 line 17 in file
+		'/home/010736297@SJSUAD.SJSU.EDU/Desktop/design_projects/f_by_2/fby2.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        q_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/010736297@SJSUAD.SJSU.EDU/Desktop/design_projects/f_by_2/fby2.db:fby2'
+Loaded 1 design.
+Current design is 'fby2'.
+fby2
+create_clock clk -name clk -period 3.75
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clk
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clk [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+#set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_output_delay 0.6 -clock clk [all_outputs]
+1
+set_fix_hold [ get_clocks clk ]
+1
+set_output_delay 0.3 -clock clk [all_outputs]
+1
+create_clock clk -name clk -period 5.0
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.5.1 |   *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+  Simplifying Design 'fby2'
+
+Loaded alib file './alib-52/tc240c.db_NOMIN25.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fby2'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:02       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:02       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:02       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:02       4.5      0.00       0.0       0.0                              0.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:02       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:03       4.5      0.00       0.0       0.0                              0.0000      0.00  
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+update_timing
+Information: Updating design information... (UID-85)
+1
+report_timing -max_paths 5
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : fby2
+Version: K-2015.06-SP5-1
+Date   : Mon Jan 29 19:37:15 2018
+****************************************
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: q_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: q (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  q_reg/CP (CFD1QXL)                       0.00       0.00 r
+  q_reg/Q (CFD1QXL)                        0.35       0.35 f
+  q (out)                                  0.00       0.35 f
+  data arrival time                                   0.35
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  output external delay                   -0.30       4.45
+  data required time                                  4.45
+  -----------------------------------------------------------
+  data required time                                  4.45
+  data arrival time                                  -0.35
+  -----------------------------------------------------------
+  slack (MET)                                        -4.10
+
+
+  Startpoint: q_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: q_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  q_reg/CP (CFD1QXL)                       0.00       0.00 r
+  q_reg/Q (CFD1QXL)                        0.35       0.35 f
+  U4/Z (CNR2XL)                            0.07       0.42 r
+  q_reg/D (CFD1QXL)                        0.00       0.42 r
+  data arrival time                                   0.42
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  q_reg/CP (CFD1QXL)                       0.00       4.75 r
+  library setup time                      -0.23       4.52
+  data required time                                  4.52
+  -----------------------------------------------------------
+  data required time                                  4.52
+  data arrival time                                  -0.42
+  -----------------------------------------------------------
+  slack (MET)                                        -4.10
+
+
+1
+write -hierarchy -format verilog -output fby2_gates.v
+Writing verilog file '/home/010736297@SJSUAD.SJSU.EDU/Desktop/design_projects/f_by_2/fby2_gates.v'.
+1
+quit
+
+Thank you...
