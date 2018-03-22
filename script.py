@@ -4,7 +4,7 @@ import os # operating system related task- file/directory/process handling, etc.
 import re #matching/finding/searching/grouping operations
 import sys #system specific parameters and functions- path, argv, stdout etc...
 import subprocess #allows to start new process and obtain return values- ex. compiling codes in terminal, etc..
-
+import time
 
 
 replace_buffer = []
@@ -45,6 +45,7 @@ def main():
     
     
     
+    
 def change_clk(count2):
     script = open("synthesis.script", "r+")
     global replace_buffer
@@ -68,7 +69,10 @@ def change_clk(count2):
 #            f.write(file_str)
         
         write_to_file(xyz)
-#        
+#       
+    time.sleep(10)
+    synthesize()     
+
     replace_buffer = []
 #    print replace_buffer
     script.close()
@@ -79,6 +83,7 @@ def change_clk(count2):
 
 def write_to_file(lmn):
     global replace_buffer
+    sflag=1
     replace_buffer.append(lmn)
     #print replace_buffer
     
@@ -89,10 +94,16 @@ def write_to_file(lmn):
     for item in replace_buffer:
 #        s.replace (value)
         sys.stdout.write(item)
-#        
     s1.close()
     
     
+
+def synthesize():
+   subprocess.call(["dc_shell -f synthesis.script | tee synres.txt"], shell=True)
+    
+
+
+
 
     #run_synthesis()
 if __name__ == '__main__':
